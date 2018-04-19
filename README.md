@@ -1,0 +1,1 @@
+RabbitMQ and Spring Boot

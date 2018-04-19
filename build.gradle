@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.1.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
+    id 'groovy'
+}
+
+group 'ru.tkachenko.app'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-amqp"
+    compile('org.springframework.boot:spring-boot-starter-jetty') {
+        exclude group: 'org.eclipse.jetty.websocket'
+    }
+
+    compileOnly 'org.projectlombok:lombok'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4'
+}
