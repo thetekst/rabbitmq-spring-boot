@@ -1,0 +1,13 @@
+spring:
+  main:
+    banner-mode: "off"
+  rabbitmq:
+    publisher-confirms: true
+    publisher-returns: true
+#    template:
+#      mandatory: true
+
+rabbitmq:
+  exchange: spring-boot-exchange
+  routingkey: error
+  queue: spring-boot-queue

@@ -1,8 +1,0 @@
-spring:
-  main:
-    banner-mode: "off"
-
-rabbitmq:
-  exchange: spring-boot-exchange
-  routingkey: error
-  queue: spring-boot-queue

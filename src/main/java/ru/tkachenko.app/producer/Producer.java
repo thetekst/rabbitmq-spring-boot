@@ -29,6 +29,14 @@ public class Producer {
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public void send() {
         log.info("====================Sending message...====================");
+
+        rabbitTemplate.setConfirmCallback((correlationData, ack, cause) ->
+                log.info("confirmedMessage. correlationData: {}, ack: {}, cause: {}", correlationData, ack, cause));
+
+        rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routingKey) ->
+                log.info("Returned Message. message: {}, replyCode: {}, replyText: {}, exchange: {}, routingKey: {}",
+                        message, replyCode, replyText, exchange, routingKey));
+
         rabbitTemplate.convertAndSend(exchange, routingkey, new Message("OK"));
     }
 
