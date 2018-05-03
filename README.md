@@ -13,4 +13,10 @@ web manager:
 http://localhost:15672/
 
 login: guest
+
 pass: guest
+
+branches:
+
+- master: simple rabbit producer/consumer
+- confirm: confirm/return callbacks
